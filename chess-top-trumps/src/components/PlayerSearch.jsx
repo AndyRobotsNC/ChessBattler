@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState } from "react";
 
 const PlayerSearch = ({ setPlayer }) => {
   const [playerTextBox, setPlayerTextBox] = useState("");
