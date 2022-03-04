@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-const PlayerSearch = ({ playerArray, setPlayerArray }) => {
+const PlayerSearch = ({ setPlayerArray }) => {
   const [player1TextBox, setPlayer1TextBox] = useState("");
   const [player2TextBox, setPlayer2TextBox] = useState("");
 
   const handleSubmit = (event) => {
-    setPlayerArray((playerArray) => [
-      ...playerArray,
+    setPlayerArray((currArray) => [
+      ...currArray,
       player1TextBox,
       player2TextBox,
     ]);
