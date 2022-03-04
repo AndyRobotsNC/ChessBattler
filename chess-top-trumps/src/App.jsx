@@ -5,13 +5,13 @@ import PlayerSearch from "./components/PlayerSearch";
 import PlayerInfo from "./components/PlayerInfo";
 
 function App() {
-  const [player, setPlayer] = useState("");
+  const [playerArray, setPlayerArray] = useState([]);
 
   return (
     <div className="App">
       <Header />
-      <PlayerSearch setPlayer={setPlayer} />
-      <PlayerInfo player={player} />
+      <PlayerSearch setPlayerArray={setPlayerArray} playerArray={playerArray} />
+      <PlayerInfo playerArray={playerArray} />
     </div>
   );
 }

@@ -1,28 +1,46 @@
 import React, { useState } from "react";
 
-const PlayerSearch = ({ setPlayer }) => {
-  const [playerTextBox, setPlayerTextBox] = useState("");
+const PlayerSearch = ({ playerArray, setPlayerArray }) => {
+  const [player1TextBox, setPlayer1TextBox] = useState("");
+  const [player2TextBox, setPlayer2TextBox] = useState("");
 
   const handleSubmit = (event) => {
-    setPlayer(playerTextBox);
-    setPlayerTextBox("");
+    setPlayerArray((playerArray) => [
+      ...playerArray,
+      player1TextBox,
+      player2TextBox,
+    ]);
+    // setPlayer1TextBox("");
+    // setPlayer2TextBox("");
     event.preventDefault();
   };
 
-  const handleChange = (event) => {
+  const handlePlayer1Change = (event) => {
     const { value } = event.target;
-    setPlayerTextBox(value);
+    setPlayer1TextBox(value);
+  };
+  const handlePlayer2Change = (event) => {
+    const { value } = event.target;
+    setPlayer2TextBox(value);
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label> username </label>
+        <label> Player 1 </label>
         <input
           className="textBox"
           type="text"
-          onChange={handleChange}
-          value={playerTextBox}
+          onChange={handlePlayer1Change}
+          value={player1TextBox}
+        />
+        <br />
+        <label> Player 2 </label>
+        <input
+          className="textBox"
+          type="text"
+          onChange={handlePlayer2Change}
+          value={player2TextBox}
         />
         <button>submit</button>
       </form>
