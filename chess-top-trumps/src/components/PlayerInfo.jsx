@@ -7,10 +7,10 @@ const PlayerInfo = ({ playerArray }) => {
 
   useEffect(() => {
     if (playerArray.length === 2) {
-      chessUser(playerArray[0]).then((data) => {
+      chessUser(playerArray[1]).then((data) => {
         setPlayersArray((currArr) => [...currArr, data]);
       });
-      chessUser(playerArray[1]).then((data) => {
+      chessUser(playerArray[0]).then((data) => {
         setPlayersArray((currArr) => [...currArr, data]);
       });
     }
@@ -20,9 +20,12 @@ const PlayerInfo = ({ playerArray }) => {
 
   return (
     <div>
-      {playersArray.map((user) => {
-        return <PlayerCard user={user} />;
-      })}
+      <div className="player-container">
+        {playersArray.map((user) => {
+          return <PlayerCard user={user} />;
+        })}
+      </div>
+      <button>Let's Play!</button>
     </div>
   );
 };

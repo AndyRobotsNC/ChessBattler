@@ -10,8 +10,8 @@ const PlayerSearch = ({ setPlayerArray }) => {
       player1TextBox,
       player2TextBox,
     ]);
-    // setPlayer1TextBox("");
-    // setPlayer2TextBox("");
+    setPlayer1TextBox("");
+    setPlayer2TextBox("");
     event.preventDefault();
   };
 
